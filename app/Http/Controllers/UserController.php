@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use DB;
 
 class UserController extends Controller
 {
@@ -25,7 +26,7 @@ class UserController extends Controller
      */
     public function create()
     {
-       return view ('create_user');
+       return view('create_user');
     }
 
     /**
@@ -38,7 +39,7 @@ class UserController extends Controller
     {
         $data = $request->all();
         $user = new User($data);
-        
+
         return redirect('users');
     }
 
@@ -74,13 +75,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $data = $request->all();
         $user = User::findOrFail($id);
-        $user->user = $request->get('user');
-        $user->password = $request->get('password');
-        $user->email = $request->get('email');
-        $user->phone = $request->get('phone');
-        $user->save();
-
+        $user->update($data);
         return redirect('users');
     }
 
@@ -94,7 +91,6 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $user->delete();
-   
         return redirect('users');
     }
 }
