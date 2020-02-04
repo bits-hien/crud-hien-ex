@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
 use App\User;
 
 class UserController extends Controller
@@ -37,15 +36,10 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $user = new User([
-            'id' => $request->get('id'),
-            'user' => $request->get('user'),
-            'password'=> $request->get('password'),
-            'email'=> $request->get('email'),
-            'phone'=> $request->get('phone')
-        ]);
-        $user->save();
-        return redirect('users.index');
+        $data = $request->all();
+        $user = new User($data);
+        
+        return redirect('users');
     }
 
     /**
@@ -67,7 +61,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         return view('update_user', compact('user'));
     }
 
@@ -80,14 +74,14 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->user = $request->get('user');
         $user->password = $request->get('password');
         $user->email = $request->get('email');
         $user->phone = $request->get('phone');
         $user->save();
 
-        return redirect('users.index');
+        return redirect('users');
     }
 
     /**
@@ -98,9 +92,9 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        $user = User::find($id);
+        $user = User::findOrFail($id);
         $user->delete();
    
-        return redirect('users.index');
+        return redirect('users');
     }
 }

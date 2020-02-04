@@ -8,7 +8,7 @@
     <body class="container">
         <h2>ĐĂNG KÝ TẠI ĐÂY</h2>
         <form action="{{ route('users.store') }}" method="POST">
-           {{ csrf_field() }}
+            @csrf()
             <div class="row">
                 <div class="col">
                     <input type="text" class="form-control" name="user" placeholder="User">

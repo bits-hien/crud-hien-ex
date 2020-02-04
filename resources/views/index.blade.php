@@ -28,11 +28,11 @@
     <tbody>
       @foreach($users as $user)
       <tr>
-        <td>{{$user->id}}</td>
-        <td>{{$user->user}}</td>
-        <td>{{$user->password}}</td>
-        <td>{{$user->email}}</td>
-        <td>{{$user->phone}}</td>
+        <td>{{ $user->id }}</td>
+        <td>{{ $user->user }}</td>
+        <td>{{ $user->password }}</td>
+        <td>{{ $user->email }}</td>
+        <td>{{ $user->phone }}</td>
         <td>
           <a href="{{ route('users.edit', $user->id) }}">UPDATE</a>
           <form action="{{ route('users.destroy', $user->id)}}" method="post">

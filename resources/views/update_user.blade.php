@@ -17,9 +17,7 @@
                 <input type="text" class="form-control" name="email" value="{{ $user->email }}">
                 <input type="text" class="form-control" name="phone" value="{{ $user->phone }}">
             </div>
-            <div class="container">
-                <input type="submit" name="submit" value="Submit">
-            </div>
+            <button class="btn btn-danger" type="submit">Submit</button>
         </form>
     </body>
 </html>
