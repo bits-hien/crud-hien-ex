@@ -15,7 +15,7 @@
                     <input type="text" class="form-control" name="user" placeholder="User">
                 </div>
                 <div class="col">
-                <input type="password" class="form-control" name="password"placeholder="Password">
+                    <input type="password" class="form-control" name="password"placeholder="Password">
                 </div>
             </div>
             <div class="row">
@@ -23,7 +23,7 @@
                     <input type="text" class="form-control" name="email" placeholder="Email">
                 </div>
                 <div class="col">
-                <input type="text" class="form-control" name="phone"placeholder="Phone">
+                    <input type="text" class="form-control" name="phone"placeholder="Phone">
                 </div>
             </div>
             <button class="btn btn-danger" type="submit">Submit</button>

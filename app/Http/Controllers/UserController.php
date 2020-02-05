@@ -15,7 +15,9 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('index', compact('users'));
+        return view('index', [
+            'users' => $users,
+        ]);
     }
 
     /**
@@ -61,7 +63,9 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
-        return view('update_user', compact('user'));
+        return view('update_user', [
+            'user' => $user,
+        ]);
     }
 
     /**
