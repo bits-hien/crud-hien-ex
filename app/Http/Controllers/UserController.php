@@ -39,7 +39,6 @@ class UserController extends Controller
     {
         $data = $request->all();
         $user = new User($data);
-
         return redirect('users');
     }
 

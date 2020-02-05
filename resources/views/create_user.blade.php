@@ -26,9 +26,7 @@
                 <input type="text" class="form-control" name="phone"placeholder="Phone">
                 </div>
             </div>
-            <div class="container">
-                <input type="submit" name="submit" value="Submit">
-            </div>
+            <button class="btn btn-danger" type="submit">Submit</button>
         </form>
         
     </body>

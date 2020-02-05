@@ -9,7 +9,7 @@
     <body class="container">
         <h2>SỬA THÔNG TIN TẠI ĐÂY</h2>
         <form action="{{ route('users.update', $user->id) }}" method="POST">
-            @method('PATCH')
+            @method('PUT')
             @csrf
             <div class="row">
                 <input type="integer" class="form-control" name="id" value="{{ $user->id }}">
