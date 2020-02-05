@@ -4,7 +4,7 @@
         <title>insert infomation</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/bootstrap4/css/bootstrap.css">
+        <link rel="stylesheet" href="../bootstrap4/css/bootstrap.css">
     </head>
     <body class="container">
         <h2>ĐĂNG KÝ TẠI ĐÂY</h2>
@@ -27,7 +27,6 @@
                 </div>
             </div>
             <button class="btn btn-danger" type="submit">Submit</button>
-        </form>
-        
+        </form>  
     </body>
 </html>

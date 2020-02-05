@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use DB;
+use App\Models\User;
 
 class UserController extends Controller
 {
@@ -38,7 +37,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $user = new User($data);
+        $user = User::create($data);
         return redirect('users');
     }
 
